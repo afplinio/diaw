@@ -1,12 +1,19 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
+import Votacao from './pages/Votacao';
+import Resultado from './pages/Resultado';
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/votacao" element={<Votacao />} />
+        <Route path="/resultado" element={<Resultado />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
       <footer className="rodape">DIAW 2026, PUC Minas</footer>
     </BrowserRouter>
   );
