@@ -1,0 +1,401 @@
+.pagina {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem) 1.25rem 2rem;
+}
+
+.pagina-topo {
+  margin-bottom: 2rem;
+}
+
+.pagina-topo h1 {
+  color: var(--ouro);
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.6rem;
+}
+
+.pagina-topo p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.secao {
+  margin-top: 3rem;
+}
+
+.secao h2 {
+  color: var(--ouro);
+  font-size: 1.8rem;
+}
+
+.secao > p {
+  margin: 0.4rem 0 1.2rem;
+  color: var(--branco);
+  opacity: 0.85;
+}
+
+.grade-indicados {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.grade-jogadores {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--grafite);
+  border: 2px solid var(--grafite-claro);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, outline-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-foto {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 0;
+  background: #efefef;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 0.3rem;
+  padding: 0.8rem 0.7rem 0.9rem;
+  text-align: center;
+}
+
+.card-nome {
+  font-size: 1.15rem;
+}
+
+.card-numero {
+  color: var(--ouro);
+}
+
+.card-posicao {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--cinza);
+}
+
+.card-botao {
+  width: 100%;
+  margin-top: auto;
+  background: var(--preto);
+  color: var(--branco);
+  box-shadow: inset 0 0 0 2px var(--branco);
+}
+
+.card-botao-selecionado {
+  background: var(--gramado);
+  box-shadow: 0 4px 0 #1f6e2f;
+}
+
+.card-indicado {
+  border: 4px solid var(--ouro);
+}
+
+.card-indicado .card-nome {
+  font-size: 1.4rem;
+}
+
+.card-suspenso {
+  border: 4px solid var(--amarelo);
+  max-width: 150px;
+}
+
+.card-elenco .card-foto {
+  filter: grayscale(1);
+}
+
+.card-elenco .card-nome {
+  font-size: 1rem;
+  color: var(--cinza);
+}
+
+.card-elenco .card-numero {
+  color: var(--cinza);
+}
+
+.card-selecionado {
+  outline: 5px solid var(--gramado);
+  outline-offset: 4px;
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+}
+
+.selo {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  z-index: 1;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--preto);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.selo-indicado {
+  background: var(--ouro);
+}
+
+.selo-suspenso {
+  background: var(--amarelo);
+  font-size: 0.7rem;
+}
+
+.confirmacao {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
+  padding: 1rem 1.2rem;
+  background: var(--preto);
+  border: 3px solid var(--ouro);
+  border-radius: 10px;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.confirmacao p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.confirmacao strong {
+  color: var(--ouro);
+}
+
+.botao:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+}
+
+.historico {
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.2rem;
+  background: var(--gramado);
+  border-radius: 8px;
+}
+
+.historico h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.historico ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.4rem 1rem;
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.historico a {
+  font-weight: 800;
+}
+
+.total-votos {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.total-votos strong {
+  font-family: var(--fonte-titulo);
+  font-size: 2.6rem;
+  color: var(--ouro);
+  line-height: 1;
+}
+
+.sem-votos {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: var(--grafite);
+  border: 2px dashed var(--grafite-claro);
+  border-radius: 12px;
+}
+
+.sem-votos p {
+  margin: 0 0 1.2rem;
+  font-size: 1.15rem;
+}
+
+.disputa {
+  margin: 0 0 1.2rem;
+  padding: 0.9rem 1.2rem;
+  background: var(--grafite);
+  border-left: 6px solid var(--ouro);
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.placar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.placar-item {
+  display: grid;
+  grid-template-columns: 3rem 84px 1fr;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.9rem 1rem 0.9rem 1.2rem;
+  background: var(--grafite);
+  border: 3px solid var(--grafite-claro);
+  border-radius: 10px;
+}
+
+.placar-posicao {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+.placar-foto {
+  width: 84px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 0;
+  border-radius: 4px;
+  background: #efefef;
+}
+
+.placar-info {
+  min-width: 0;
+}
+
+.placar-nome {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  font-size: 1.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.placar-selo {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-family: var(--fonte-texto);
+  font-size: 0.85rem;
+  text-transform: none;
+  color: var(--preto);
+}
+
+.selo-craque {
+  background: var(--ouro);
+}
+
+.selo-vice {
+  background: var(--prata);
+}
+
+.barra {
+  width: 100%;
+  height: 22px;
+  background: var(--grafite-claro);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barra-preenchida {
+  height: 100%;
+  background: var(--cinza);
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+.placar-votos {
+  margin: 0.6rem 0 0;
+  font-weight: 800;
+}
+
+.placar-craque {
+  border-color: var(--ouro);
+}
+
+.placar-craque .barra-preenchida {
+  background: var(--ouro);
+}
+
+.placar-vice {
+  border-color: var(--prata);
+}
+
+.placar-vice .barra-preenchida {
+  background: var(--prata);
+}
+
+.resultado-acoes {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.botao-claro {
+  background: var(--branco);
+  color: var(--preto);
+  box-shadow: 0 4px 0 var(--cinza);
+}
+
+.botao-contorno {
+  background: transparent;
+  color: var(--branco);
+  box-shadow: inset 0 0 0 2px var(--branco);
+}
+
+@media (max-width: 900px) {
+  .grade-indicados {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .grade-indicados {
+    grid-template-columns: 1fr;
+  }
+
+  .placar-item {
+    grid-template-columns: 2.2rem 60px 1fr;
+    gap: 0.8rem;
+  }
+
+  .placar-foto {
+    width: 60px;
+  }
+
+  .placar-nome {
+    font-size: 1.3rem;
+  }
+}
